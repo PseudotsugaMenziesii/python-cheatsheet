@@ -1,11 +1,6 @@
-
 /* Copyright 2013 Michael Bostock. All rights reserved. Do not copy. */
 
-@import url(//fonts.googleapis.com/css?family=PT+Serif|PT+Serif:b|PT+Serif:i|PT+Sans|PT+Sans:b);
-
-html {
-  min-width: 1040px;
-}
+@import url(https://fonts.googleapis.com/css?family=PT+Serif|PT+Serif:b|PT+Serif:i|PT+Sans|PT+Sans:b);
 
 .ocks-org body {
   background: #fcfcfa;
@@ -14,6 +9,7 @@ html {
   margin: 1em auto 4em auto;
   position: relative;
   width: 960px;
+  padding: 1rem;
 }
 
 .ocks-org header,
@@ -42,23 +38,22 @@ h1 {
   font-size: 64px;
   font-weight: 300;
   letter-spacing: -2px;
-  margin: .3em 0 .1em 0;
+  margin: 0.3em 0 0.1em 0;
 }
 
 h2 {
   margin-top: 2em;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-rendering: optimizeLegibility;
 }
 
 h2 a[name],
 h2 a[id] {
   color: #ccc;
-  right: 100%;
-  padding: 0 .3em;
-  position: absolute;
+  padding-right: 0.3em;
 }
 
 header,
@@ -69,12 +64,12 @@ footer {
 .ocks-org header aside,
 .ocks-org footer aside {
   float: left;
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 .ocks-org header aside:after,
 .ocks-org footer aside:after {
-  padding-left: .5em;
+  padding-left: 0.5em;
   content: "/";
 }
 
@@ -94,11 +89,14 @@ h1 ~ aside {
   margin-bottom: 2em;
 }
 
-body > p, li > p {
+body > p,
+li > p,
+div > p {
   line-height: 1.5em;
 }
 
-body > p {
+body > p,
+div > p {
   width: 720px;
 }
 
@@ -128,7 +126,9 @@ a:not(:hover) {
   text-decoration: none;
 }
 
-pre, code, textarea {
+pre,
+code,
+textarea {
   font-family: "Menlo", monospace;
 }
 
@@ -140,10 +140,10 @@ textarea {
   font-size: 100%;
 }
 
-body > pre {
+pre {
   border-left: solid 2px #ccc;
   padding-left: 18px;
-  margin: 2em 0 2em -20px;
+  margin: 2em 0 2em 0;
 }
 
 .html .value,
@@ -192,13 +192,15 @@ svg {
   font: 10px sans-serif;
 }
 
-.axis path, .axis line {
+.axis path,
+.axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
 }
 
-sup, sub {
+sup,
+sub {
   line-height: 0;
 }
 
@@ -218,4 +220,58 @@ blockquote q {
 blockquote q:before,
 blockquote q:after {
   content: "";
+}
+
+h3,
+h4,
+p,
+ul {
+  padding-left: 1.2rem;
+}
+
+.banner {
+  padding: 0;
+}
+
+#toc {
+  margin-top: 0;
+}
+
+@media only screen and (max-device-width: 1023px) {
+  .ocks-org body {
+    font-size: 72%;
+    padding: 0.5rem;
+  }
+
+  body > p,
+  div > p {
+    width: 90vw !important;
+  }
+
+  li {
+    width: 82vw;
+  }
+
+  h3,
+  h4,
+  p,
+  ul {
+    padding-left: .7rem;
+    width: 90vw;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  pre {
+    padding-left: 0.5rem;
+  }
+
+  .banner,
+  h1,
+  img {
+    max-width: calc(100vw - 2em);
+    min-width: calc(100vw - 2em);
+  }
 }
